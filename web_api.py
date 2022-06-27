@@ -9,7 +9,7 @@ def Top_id_List():
     top_id_js = response_top_id.json()  # トップニュースのIDをパース
 
     top_id_l = []  # 空リスト、トップニュースのIDが入る
-    for n in range(20):  # 50件のIDを空リストへ
+    for n in range(50):  # 50件のIDを空リストへ
         top_id_l.append(top_id_js[n])
     return top_id_l
 
