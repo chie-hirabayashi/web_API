@@ -9,7 +9,7 @@ def Top_id_List():
     top_id_js = response_top_id.json()  # トップニュースのIDをパース
 
     top_id_l = []  # 空リスト、トップニュースのIDが入る
-    for n in range(50):  # 50件のIDを空リストへ
+    for n in range(20):  # 50件のIDを空リストへ
         top_id_l.append(top_id_js[n])
     return top_id_l
 
@@ -26,7 +26,10 @@ def main():
         topstory = response_topstories.json()  # トップニュースをパース
 
         story_dic.setdefault("title:", f"{topstory['title']}")
-        story_dic.setdefault("list:", f"{topstory['url']}")
+        if "url" in topstory:
+            story_dic.setdefault("link:", f"{topstory['url']}")
+        else:
+            pass
         time.sleep(1)  # ここで1秒止まる
         print(story_dic)
 
@@ -34,5 +37,12 @@ def main():
 if __name__ == "__main__":
     main()
 
-
+"""
 # printのエラーはしょうがないか
+
+        story_dic.setdefault("title:", f"{topstory['title']}")
+        if topstory["url"] != "nul":
+            story_dic.setdefault("link:", f"{topstory['url']}")
+        time.sleep(1)  # ここで1秒止まる
+        print(story_dic)
+"""
