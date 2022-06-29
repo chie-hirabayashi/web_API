@@ -11,6 +11,7 @@ def Top_id_List():
     top_id_l = []  # 空リスト、トップニュースのIDが入る
     for n in range(50):  # 50件のIDを空リストへ
         top_id_l.append(top_id_js[n])
+        time.sleep(0.5)  # ここで0.5秒止まる
     return top_id_l
 
 
@@ -37,12 +38,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-"""
-# printのエラーはしょうがないか
 
-        story_dic.setdefault("title:", f"{topstory['title']}")
-        if topstory["url"] != "nul":
-            story_dic.setdefault("link:", f"{topstory['url']}")
-        time.sleep(1)  # ここで1秒止まる
-        print(story_dic)
-"""
+# printのエラーは直せない？
